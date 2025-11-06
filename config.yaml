@@ -1,0 +1,19 @@
+defaults:
+  durations_sec: [12, 15, 9, 13, 8]
+  target_fps: 30
+  video_height: 1920
+  crops: ["9x16_full", "4x5_center"]
+  fade_out_sec: 0.6
+  crf: 17
+  audio_bitrate: "192k"
+  fusion:
+    audio_weight: 0.7
+    visual_weight: 0.3
+  anchor:
+    beat_snap_ms: 350
+    start_offsets_factor: [0.35, 0.45, 0.25, 0.35, 0.30]
+    jitter_ms: 150
+  suggestions:
+    enabled: true
+    max_candidates: 5
+    min_spacing_sec: 2.0

@@ -1,0 +1,30 @@
+Bandana Clip Studio - Verification Commands (Copy-Paste Ready)
+==============================================================
+
+# Navigate to project
+cd ~/Desktop/tech/projects/bandana_clip_studio
+
+# Test full setup (will recreate venv and install dependencies)
+./start_bandana.sh
+
+# After setup completes, test quick restart
+./run_local.sh
+
+# Alternative: Use Makefile
+make setup
+make run
+
+# Clean everything and start fresh
+make clean
+make setup
+
+Expected Output Verification:
+✅ No "Defaulting to user installation" messages
+✅ No opencv source compilation (fast wheel install)
+✅ Success line: "✅ OK Python 3.12.4 | OpenCV 4.8.1 | macOS 10.15.x"
+✅ Streamlit launches at http://localhost:8501
+
+Troubleshooting:
+- If Python 3.12 not found, script will fall back to python3.11 or python3
+- If opencv build starts, stop with Ctrl+C and check requirements.txt pins
+- If "user installation" appears, the venv is broken and will be recreated
